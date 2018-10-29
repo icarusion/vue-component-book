@@ -23,7 +23,7 @@
         data () {
             return {
                 formValidate: {
-                    name: 'hello',
+                    name: '',
                     mail: ''
                 },
                 ruleValidate: {

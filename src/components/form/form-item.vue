@@ -3,7 +3,7 @@
         <label v-if="label">{{ label }}</label>
         <div>
             <slot></slot>
-            <div v-if="validateState === 'error'">{{ validateMessage }}</div>
+            <div v-if="validateState === 'error'" style="color: red">{{ validateMessage }}</div>
         </div>
     </div>
 </template>
