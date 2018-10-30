@@ -25,11 +25,13 @@
             };
         },
         methods: {
+            // 公开方法：全部重置数据
             resetFields() {
                 this.fields.forEach(field => {
                     field.resetField();
                 });
             },
+            // 公开方法：全部校验数据，支持 Promise
             validate(callback) {
                 return new Promise(resolve => {
                     let valid = true;
@@ -40,7 +42,7 @@
                                 valid = false;
                             }
                             if (++count === this.fields.length) {
-                                // all finish
+                                // 全部完成
                                 resolve(valid);
                                 if (typeof callback === 'function') {
                                     callback(valid);
@@ -49,11 +51,6 @@
                         });
                     });
                 });
-            }
-        },
-        watch: {
-            rules() {
-                this.validate();
             }
         },
         created () {
