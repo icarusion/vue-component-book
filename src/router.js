@@ -10,6 +10,10 @@ export default new Router({
             component: () => import('./views/form.vue')
         },
         {
+            path: '/checkbox',
+            component: () => import('./views/checkbox.vue')
+        },
+        {
             path: '/',
             component: () => import('./views/index.vue')
         }
