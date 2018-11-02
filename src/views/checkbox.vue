@@ -4,6 +4,9 @@
 
         <i-checkbox v-model="single">单独选项</i-checkbox>
 
+        <br>
+        数据：{{ single }}
+
         <br><br>
 
         <i-checkbox-group v-model="multiple">
@@ -12,6 +15,9 @@
             <i-checkbox label="option3">选项 3</i-checkbox>
             <i-checkbox label="option4">选项 4</i-checkbox>
         </i-checkbox-group>
+
+        <br>
+        数据：{{ multiple }}
     </div>
 </template>
 <script>
