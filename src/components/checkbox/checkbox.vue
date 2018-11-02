@@ -20,7 +20,7 @@
 </template>
 <script>
     import { findComponentUpward } from '../../utils/assist';
-    import Emitter from '../../mixins/emitter';
+    import Emitter from '../../mixins/emitter.js';
 
     export default {
         name: 'iCheckbox',
