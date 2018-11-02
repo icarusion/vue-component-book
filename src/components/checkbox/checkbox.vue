@@ -15,11 +15,11 @@
                 :checked="currentValue"
                 @change="change">
         </span>
-        <slot><span v-if="showSlot">{{ label }}</span></slot>
+        <slot></slot>
     </label>
 </template>
 <script>
-    import { findComponentUpward } from '../../utils/assist';
+    import { findComponentUpward } from '../../utils/assist.js';
     import Emitter from '../../mixins/emitter.js';
 
     export default {
@@ -48,10 +48,9 @@
         },
         data () {
             return {
-                model: [],
                 currentValue: this.value,
+                model: [],
                 group: false,
-                showSlot: true,
                 parent: null,
             };
         },
@@ -66,7 +65,6 @@
                 this.parent.updateModel(true);
             } else {
                 this.updateModel();
-                this.showSlot = this.$slots.default !== undefined;
             }
         },
         methods: {

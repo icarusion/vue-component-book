@@ -4,8 +4,8 @@
     </div>
 </template>
 <script>
-    import { findComponentsDownward } from '../../utils/assist';
-    import Emitter from '../../mixins/emitter';
+    import { findComponentsDownward } from '../../utils/assist.js';
+    import Emitter from '../../mixins/emitter.js';
 
     export default {
         name: 'iCheckboxGroup',
