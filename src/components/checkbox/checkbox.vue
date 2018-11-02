@@ -52,11 +52,12 @@
                 currentValue: this.value,
                 group: false,
                 showSlot: true,
-                parent: findComponentUpward(this, 'iCheckboxGroup'),
+                parent: null,
             };
         },
         mounted () {
             this.parent = findComponentUpward(this, 'iCheckboxGroup');
+
             if (this.parent) {
                 this.group = true;
             }
