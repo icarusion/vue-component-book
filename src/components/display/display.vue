@@ -14,7 +14,7 @@
         },
         data () {
             return {
-                id : randomStr(),
+                id: randomStr(),
                 html: '',
                 js: '',
                 css: '',

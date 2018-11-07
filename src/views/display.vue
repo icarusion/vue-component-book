@@ -2,15 +2,15 @@
     <div>
         <h3>动态渲染 .vue 文件的组件—— Display</h3>
 
-        <display :code="code"></display>
+        <i-display :code="code"></i-display>
     </div>
 </template>
 <script>
-    import Display from '../components/display/display.vue';
+    import iDisplay from '../components/display/display.vue';
     import defaultCode from './default-code.js';
 
     export default {
-        components: { Display },
+        components: { iDisplay },
         data () {
             return {
                 code: defaultCode
