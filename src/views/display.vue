@@ -7,28 +7,13 @@
 </template>
 <script>
     import Display from '../components/display/display.vue';
+    import defaultCode from './default-code.js';
 
     export default {
         components: { Display },
         data () {
             return {
-                code: `
-                <template>
-                    <div>
-                        <input v-model="message">
-                        {{ message }}
-                    </div>
-                </template>
-                <script>
-                    export default {
-                        data () {
-                            return {
-                                message: ''
-                            }
-                        }
-                    }
-                </script>
-                `
+                code: defaultCode
             }
         }
     }
