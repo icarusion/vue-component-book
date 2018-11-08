@@ -18,6 +18,10 @@ export default new Router({
             component: () => import('./views/display.vue')
         },
         {
+            path: '/alert',
+            component: () => import('./views/alert.vue')
+        },
+        {
             path: '/',
             component: () => import('./views/index.vue')
         }
