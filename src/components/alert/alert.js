@@ -7,16 +7,17 @@ function getMessageInstance () {
     return messageInstance;
 }
 
-function notice(content = '') {
+function notice({ duration = 1.5, content = '' }) {
     let instance = getMessageInstance();
 
     instance.add({
-        content: content
+        content: content,
+        duration: duration
     });
 }
 
 export default {
     info (options) {
-        return notice(options.content);
+        return notice(options);
     }
 }
