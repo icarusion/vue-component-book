@@ -9,7 +9,9 @@
     export default {
         methods: {
             handleOpen () {
-                this.$Alert.info('提示信息');
+                this.$Alert.info({
+                    content: '提示信息'
+                });
             }
         }
     }
