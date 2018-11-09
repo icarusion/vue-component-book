@@ -17,7 +17,7 @@
             handleOpen2 () {
                 this.$Alert.info({
                     content: '我是提示信息 2',
-                    duration: 10
+                    duration: 3
                 });
             }
         }
