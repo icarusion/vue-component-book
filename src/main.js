@@ -5,7 +5,7 @@ import Alert from '../src/components/alert/alert.js'
 
 Vue.config.productionTip = false
 
-Vue.prototype.$Alert = Alert;
+Vue.prototype.$Alert = Alert
 
 new Vue({
   router,
