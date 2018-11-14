@@ -14,6 +14,9 @@
                 <li>
                     <router-link to="/alert">实战 4：全局通知组件 —— $Alert</router-link>
                 </li>
+                <li>
+                    <router-link to="/table-render">实战 5：可用 Render 自定义列的表格组件 —— Table</router-link>
+                </li>
             </ul>
         </div>
         <hr>
