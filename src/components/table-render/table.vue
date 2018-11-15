@@ -35,12 +35,6 @@
                     return [];
                 }
             }
-        },
-        data () {
-            return {
-                currentColumns: [],
-                currentData: []
-            }
         }
     }
 </script>
