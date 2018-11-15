@@ -2,10 +2,7 @@ export default {
     functional: true,
     props: {
         row: Object,
-        column: {
-            type: Object,
-            default: null
-        },
+        column: Object,
         index: Number,
         render: Function
     },
