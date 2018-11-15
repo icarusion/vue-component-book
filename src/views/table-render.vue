@@ -197,8 +197,8 @@
                 editIndex: -1,  // 当前聚焦的输入框的行数
                 editName: '',  // 第一列输入框，当然聚焦的输入框的输入内容，与 data 分离避免重构的闪烁
                 editAge: '',  // 第二列输入框
-                editBirthday: '',
-                editAddress: '',  // 第三列输入框
+                editBirthday: '',  // 第三列输入框
+                editAddress: '',  // 第四列输入框
             }
         }
     }
