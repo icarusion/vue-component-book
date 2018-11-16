@@ -17,6 +17,9 @@
                 <li>
                     <router-link to="/table-render">实战 5：可用 Render 自定义列的表格组件 —— Table</router-link>
                 </li>
+                <li>
+                    <router-link to="/table-slot">实战 6：可用 slot-scope 自定义列的表格组件 —— Table</router-link>
+                </li>
             </ul>
         </div>
         <hr>
