@@ -2,7 +2,7 @@
     <div>
         <h3>实战 6：可用 slot-scope 自定义列的表格组件 —— Table</h3>
 
-        <table-render :columns="columns" :data="data">
+        <table-slot :columns="columns" :data="data">
             <template slot-scope="{ row, index }" slot="name">
                 <input type="text" v-model="editName" v-if="editIndex === index" />
                 <span v-else>{{ row.name }}</span>
@@ -32,14 +32,14 @@
                     <button @click="handleEdit(row, index)">操作</button>
                 </div>
             </template>
-        </table-render>
+        </table-slot>
     </div>
 </template>
 <script>
-    import TableRender from '../components/table-slot/table.vue';
+    import TableSlot from '../components/table-slot/table.vue';
 
     export default {
-        components: { TableRender },
+        components: { TableSlot },
         data () {
             return {
                 columns: [
