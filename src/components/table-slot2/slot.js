@@ -4,8 +4,7 @@ export default {
     props: {
         row: Object,
         column: Object,
-        index: Number,
-        render: Function
+        index: Number
     },
     render: (h, ctx) => {
         return h('div', ctx.injections.tableRoot.$scopedSlots[ctx.props.column.slot]({
