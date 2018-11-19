@@ -1,5 +1,6 @@
 export default {
     functional: true,
+    inject: ['tableRoot'],
     props: {
         row: Object,
         column: Object,
@@ -7,12 +8,10 @@ export default {
         render: Function
     },
     render: (h, ctx) => {
-        const params = {
+        return h('div', ctx.injections.tableRoot.$scopedSlots[ctx.props.column.slot]({
             row: ctx.props.row,
             column: ctx.props.column,
             index: ctx.props.index
-        };
-
-        return ctx.props.render(h, params);
+        }));
     }
 };

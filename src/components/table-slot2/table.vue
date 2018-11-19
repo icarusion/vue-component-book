@@ -8,8 +8,11 @@
         <tbody>
             <tr v-for="(row, rowIndex) in data">
                 <td v-for="col in columns">
-                    <template v-if="'slot' in col">
-                        <Render :row="row" :column="col" :index="rowIndex"></Render>
+                    <template v-if="'render' in col">
+                        <Render :row="row" :column="col" :index="rowIndex" :render="col.render"></Render>
+                    </template>
+                    <template v-else-if="'slot' in col">
+                        <slot-scope :row="row" :column="col" :index="rowIndex"></slot-scope>
                     </template>
                     <template v-else>{{ row[col.key] }}</template>
                 </td>
@@ -19,9 +22,10 @@
 </template>
 <script>
     import Render from './render.js';
+    import SlotScope from './slot.js';
 
     export default {
-        components: { Render },
+        components: { Render, SlotScope },
         provide () {
             return {
                 tableRoot: this
