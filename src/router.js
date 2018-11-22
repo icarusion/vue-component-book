@@ -30,6 +30,10 @@ export default new Router({
             component: () => import('./views/table-slot.vue')
         },
         {
+            path: '/tree',
+            component: () => import('./views/tree.vue')
+        },
+        {
             path: '/',
             component: () => import('./views/index.vue')
         }

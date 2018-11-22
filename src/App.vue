@@ -20,6 +20,9 @@
                 <li>
                     <router-link to="/table-slot">实战 6：可用 slot-scope 自定义列的表格组件 —— Table</router-link>
                 </li>
+                <li>
+                    <router-link to="/tree">实战 7：树形控件 —— Tree</router-link>
+                </li>
             </ul>
         </div>
         <hr>
