@@ -2,7 +2,9 @@
     <div>
         <h3>实战 7：树形控件 —— Tree</h3>
 
-        <Tree :data="data"></Tree>
+        {{ data }}
+
+        <Tree :data="data" show-checkbox></Tree>
     </div>
 </template>
 <script>
@@ -31,7 +33,6 @@ export default {
                         },
                         {
                             title: 'parent 1-2',
-                            expand: true,
                             children: [
                                 {
                                     title: 'leaf 1-2-1'
