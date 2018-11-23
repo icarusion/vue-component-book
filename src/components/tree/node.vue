@@ -40,15 +40,24 @@
                 default: false
             }
         },
+        data () {
+            return {
+                tree: findComponentUpward(this, 'Tree')
+            }
+        },
         methods: {
             handleExpand () {
                 this.$set(this.data, 'expand', !this.data.expand);
+
+                if (this.tree) {
+                    this.tree.emitEvent('on-toggle-expand', this.data);
+                }
             },
             handleCheck (checked) {
-                const Tree = findComponentUpward(this, 'Tree');
+                if (this.tree) {
+                    this.tree.updateTreeDown(this.data, checked);
 
-                if (Tree) {
-                    Tree.updateTreeDown(this.data, checked);
+                    this.tree.emitEvent('on-check-change', this.data);
                 }
             }
         },

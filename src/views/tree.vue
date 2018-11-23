@@ -2,9 +2,12 @@
     <div>
         <h3>实战 7：树形控件 —— Tree</h3>
 
-        {{ data }}
-
-        <Tree :data="data" show-checkbox></Tree>
+        <Tree
+            :data="data"
+            show-checkbox
+            @on-toggle-expand="handleToggleExpand"
+            @on-check-change="handleCheckChange"
+        ></Tree>
     </div>
 </template>
 <script>
@@ -47,6 +50,13 @@ export default {
             ]
         }
     },
-
+    methods: {
+        handleToggleExpand (data) {
+            console.log(data);
+        },
+        handleCheckChange (data) {
+            console.log(data);
+        }
+    }
 }
 </script>

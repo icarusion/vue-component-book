@@ -33,6 +33,9 @@
             }
         },
         methods: {
+            rebuildData () {
+                this.cloneData = this.initData(deepCopy(this.data));
+            },
             initData (data) {
                 data.forEach(item => {
                     if (!('expand' in item)) {
@@ -56,10 +59,18 @@
                         this.updateTreeDown(item, checked);
                     });
                 }
+            },
+            emitEvent (eventName, data) {
+                this.$emit(eventName, data, this.cloneData);
             }
         },
         created () {
-            this.cloneData = this.initData(deepCopy(this.data));
+            this.rebuildData();
+        },
+        watch: {
+            data () {
+                this.rebuildData();
+            }
         }
     }
 </script>
