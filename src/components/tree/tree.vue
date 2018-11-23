@@ -1,7 +1,7 @@
 <template>
     <div>
         <tree-node
-            v-for="(item, index) in data"
+            v-for="(item, index) in cloneData"
             :key="index"
             :data="item"
             :show-checkbox="showCheckbox"
@@ -10,6 +10,7 @@
 </template>
 <script>
     import TreeNode from './node.vue';
+    import { deepCopy } from '../../utils/assist.js';
 
     export default {
         name: 'Tree',
@@ -24,6 +25,11 @@
             showCheckbox: {
                 type: Boolean,
                 default: false
+            }
+        },
+        data () {
+            return {
+                cloneData: []
             }
         },
         methods: {
@@ -42,9 +48,6 @@
                 }
                 return data;
             },
-            updateTreeUp () {
-
-            },
             updateTreeDown (data, checked) {
                 this.$set(data, 'checked', checked);
 
@@ -55,8 +58,8 @@
                 }
             }
         },
-        mounted () {
-            this.data = this.initData(this.data);
+        created () {
+            this.cloneData = this.initData(deepCopy(this.data));
         }
     }
 </script>

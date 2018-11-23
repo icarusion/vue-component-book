@@ -8,7 +8,7 @@
             <i-checkbox
                 v-if="showCheckbox"
                 :value="data.checked"
-                @click.native.prevent="handleCheck"
+                @input="handleCheck"
             ></i-checkbox>
             <span>{{ data.title }}</span>
             <tree-node
@@ -44,14 +44,23 @@
             handleExpand () {
                 this.$set(this.data, 'expand', !this.data.expand);
             },
-            handleCheck () {
-                const checked = !this.data.checked;
-
+            handleCheck (checked) {
                 const Tree = findComponentUpward(this, 'Tree');
 
                 if (Tree) {
                     Tree.updateTreeDown(this.data, checked);
                 }
+            }
+        },
+        watch: {
+            'data.children': {
+                handler (data) {
+                    if (data) {
+                        const checkedAll = !data.some(item => !item.checked);
+                        this.$set(this.data, 'checked', checkedAll);
+                    }
+                },
+                deep: true
             }
         }
     }
