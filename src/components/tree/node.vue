@@ -55,7 +55,7 @@
             },
             handleCheck (checked) {
                 this.updateTreeDown(this.data, checked);
-                
+
                 if (this.tree) {
                     this.tree.emitEvent('on-check-change', this.data);
                 }
