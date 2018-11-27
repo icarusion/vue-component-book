@@ -68,7 +68,7 @@
                         this.updateTreeDown(item, checked);
                     });
                 }
-            },
+            }
         },
         watch: {
             'data.children': {
