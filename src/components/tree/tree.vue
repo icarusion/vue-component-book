@@ -34,22 +34,7 @@
         },
         methods: {
             rebuildData () {
-                this.cloneData = this.initData(deepCopy(this.data));
-            },
-            initData (data) {
-                data.forEach(item => {
-                    if (!('expand' in item)) {
-                        item.expand = false;
-                    }
-                    if (!('checked' in item)) {
-                        item.checked = false;
-                    }
-                });
-
-                if (data.children && data.children.length) {
-                    data.children = this.initData(this.children);
-                }
-                return data;
+                this.cloneData = deepCopy(this.data);
             },
             updateTreeDown (data, checked) {
                 this.$set(data, 'checked', checked);
