@@ -36,15 +36,7 @@
             rebuildData () {
                 this.cloneData = deepCopy(this.data);
             },
-            updateTreeDown (data, checked) {
-                this.$set(data, 'checked', checked);
 
-                if (data.children && data.children.length) {
-                    data.children.forEach(item => {
-                        this.updateTreeDown(item, checked);
-                    });
-                }
-            },
             emitEvent (eventName, data) {
                 this.$emit(eventName, data, this.cloneData);
             }

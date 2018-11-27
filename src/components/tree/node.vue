@@ -54,12 +54,21 @@
                 }
             },
             handleCheck (checked) {
+                this.updateTreeDown(this.data, checked);
+                
                 if (this.tree) {
-                    this.tree.updateTreeDown(this.data, checked);
-
                     this.tree.emitEvent('on-check-change', this.data);
                 }
-            }
+            },
+            updateTreeDown (data, checked) {
+                this.$set(data, 'checked', checked);
+
+                if (data.children && data.children.length) {
+                    data.children.forEach(item => {
+                        this.updateTreeDown(item, checked);
+                    });
+                }
+            },
         },
         watch: {
             'data.children': {
