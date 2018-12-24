@@ -1,4 +1,7 @@
-# vue-component-book
+
+![](https://file.iviewui.com/vue-component-book.png)
+
+购买地址：[https://juejin.im/book/5bc844166fb9a05cd676ebca](https://juejin.im/book/5bc844166fb9a05cd676ebca)
 
 ## Project setup
 ```
